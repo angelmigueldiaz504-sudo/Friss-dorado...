@@ -1,0 +1,1595 @@
+/* ========================= */
+/* ESTILOS GENERALES */
+/* ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    background-image: 
+        linear-gradient(rgba(18, 18, 18, 0.90), rgba(18, 18, 18, 0.94)),
+        url("Imagenes/Textura-Fondo.jpg");
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    background-attachment: fixed;
+    color: white;
+}
+
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header {
+    width: 100%;
+    height: 90px;
+
+    background: #181818;
+    border-bottom: 2px solid #FF8C00;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 70px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* ========================= */
+/* LOGO PRINCIPAL */
+/* ========================= */
+
+.logo img {
+    width: 230px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+
+/* ========================= */
+/* MENÚ */
+/* ========================= */
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 45px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .25s ease;
+    padding: 8px 18px;
+    border-radius: 8px;
+    background: rgba(255, 140, 0, 0.12);
+    border: 1px solid rgba(255, 140, 0, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav a:hover {
+    color: #ffffff;
+    background: #FF8C00;
+    border-color: #FF8C00;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.45);
+    transform: translateY(-1px);
+}
+
+
+/* ========================= */
+/* SUBMENÚ */
+/* ========================= */
+
+.submenu {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 220px;
+
+    background: #1b1b1b;
+
+    border-radius: 10px;
+
+    list-style: none;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .3);
+
+    z-index: 1000;
+}
+
+.submenu li {
+    width: 100%;
+}
+
+.submenu a {
+    display: block;
+
+    padding: 14px 18px;
+
+    color: white;
+}
+
+.submenu a:hover {
+    background: #FF8C00;
+    color: #1B1B1B;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+
+/* ========================= */
+/* FLECHA DEL MENÚ */
+/* ========================= */
+
+.fa-chevron-down {
+    margin-left: 6px;
+    font-size: 12px;
+    transition: transform .3s;
+}
+
+.dropdown:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+
+/* ========================= */
+/* EFECTOS */
+/* ========================= */
+
+nav a,
+.submenu,
+.logo img {
+    transition: .3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+
+/* ========================= */
+/* CARRITO */
+/* ========================= */
+
+.carrito {
+    position: fixed;
+
+    top: 105px;
+    right: 25px;
+
+    z-index: 20000;
+}
+
+
+/* ========================= */
+/* BOTÓN CARRITO */
+/* ========================= */
+
+.boton-carrito {
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #FF8C00;
+    color: #121212;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
+
+    transition: .3s;
+
+    position: relative;
+}
+
+.boton-carrito:hover {
+    transform: scale(1.08);
+    background: white;
+}
+
+
+/* ========================= */
+/* CANTIDAD CARRITO */
+/* ========================= */
+
+#cantidadCarrito {
+    position: absolute;
+
+    top: -5px;
+    right: -5px;
+
+    min-width: 22px;
+    height: 22px;
+
+    padding: 2px 6px;
+
+    background: #121212;
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ========================= */
+/* PANEL CARRITO */
+/* ========================= */
+
+.panel-carrito {
+    display: none;
+
+    position: absolute;
+
+    top: 65px;
+    right: 0;
+
+    width: 360px;
+    max-height: 500px;
+
+    background: #1b1b1b;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .6);
+
+    border: 2px solid #FF8C00;
+
+    overflow: hidden;
+}
+
+.panel-carrito.abierto {
+    display: block;
+}
+
+
+/* ========================= */
+/* CABECERA CARRITO */
+/* ========================= */
+
+.cabecera-carrito {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #444;
+
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.cabecera-carrito h2 {
+    color: #FF8C00;
+    font-size: 22px;
+}
+
+
+/* ========================= */
+/* CERRAR CARRITO */
+/* ========================= */
+
+.cerrar-carrito {
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.cerrar-carrito:hover {
+    color: #FF8C00;
+}
+
+
+/* ========================= */
+/* LISTA CARRITO */
+/* ========================= */
+
+.lista-carrito {
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.carrito-vacio {
+    text-align: center;
+
+    color: #aaa;
+
+    padding: 30px 10px;
+}
+
+
+/* ========================= */
+/* PRODUCTOS CARRITO */
+/* ========================= */
+
+.item-carrito {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #333;
+}
+
+.item-carrito strong {
+    color: white;
+    font-size: 15px;
+}
+
+.item-carrito p {
+    color: #FF8C00;
+
+    margin-top: 4px;
+
+    font-size: 14px;
+}
+
+
+/* ========================= */
+/* CONTROLES CARRITO */
+/* ========================= */
+
+.controles-carrito {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.controles-carrito button {
+    width: 28px;
+    height: 28px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #FF8C00;
+    color: #121212;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.controles-carrito span {
+    min-width: 20px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.controles-carrito .eliminar-producto {
+    background: #b30000;
+    color: white;
+
+    margin-left: 5px;
+}
+
+
+/* ========================= */
+/* TOTAL CARRITO */
+/* ========================= */
+
+.total-carrito {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid #444;
+
+    margin-top: 15px;
+
+    padding-top: 15px;
+
+    font-size: 18px;
+}
+
+.total-carrito strong {
+    color: #FF8C00;
+}
+
+
+/* ========================= */
+/* COMPLETAR PEDIDO */
+/* ========================= */
+
+.completar-pedido {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #25D366;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.completar-pedido:hover {
+    transform: scale(1.03);
+
+    background: #1ebe5d;
+}
+
+
+/* ========================= */
+/* FUNDACIÓN */
+/* ========================= */
+
+.fundacion {
+    width: 100%;
+
+    padding: 60px 8% 80px;
+
+    color: white;
+}
+
+
+/* ========================= */
+/* CONTENIDO FUNDACIÓN */
+/* ========================= */
+
+.contenido-fundacion {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr .8fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+/* ========================= */
+/* TEXTO FUNDACIÓN */
+/* ========================= */
+
+.texto-fundacion {
+    text-align: center;
+}
+
+.texto-fundacion h1 {
+    color: #FF8C00;
+
+    font-size: 42px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================= */
+/* LOGO DEL POLLO + SLOGAN */
+/* ========================= */
+
+.logo-slogan {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+
+/* LOGO DEL POLLO */
+
+.logo-slogan .logo-fundacion {
+    width: 110px;
+
+    height: auto;
+
+    display: block;
+
+    transition: .3s;
+}
+
+.logo-slogan .logo-fundacion:hover {
+    transform: scale(1.05);
+}
+
+
+/* SLOGAN */
+
+.logo-slogan p {
+    margin: 0;
+
+    color: #FF8C00;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    font-style: italic;
+
+    line-height: 1.3;
+
+    text-align: center;
+
+    max-width: 300px;
+}
+
+
+/* ========================= */
+/* PÁRRAFOS FUNDACIÓN */
+/* ========================= */
+
+.texto-fundacion > p {
+    color: #d9d9d9;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+
+    text-align: justify;
+}
+
+.texto-fundacion strong {
+    color: #FF8C00;
+}
+
+
+/* ========================= */
+/* FOTO FUNDACIÓN */
+/* ========================= */
+
+.foto-fundacion {
+    width: 100%;
+
+    min-height: 450px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding-top: 317px;
+}
+
+.foto-fundacion img {
+    width: 100%;
+
+    max-width: 450px;
+
+    height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    background: #1b1b1b;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .45);
+
+    transition: .3s;
+}
+
+.foto-fundacion img:hover {
+    transform: scale(1.02);
+}
+
+
+/* ========================= */
+/* UBICACIÓN */
+/* ========================= */
+
+.ubicacion-inicio {
+    max-width: 1200px;
+
+    margin: 70px auto 0;
+
+    padding-top: 45px;
+
+    border-top: 2px solid #FF8C00;
+
+    text-align: center;
+}
+
+.ubicacion-inicio h2 {
+    color: #FF8C00;
+
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+.ubicacion-inicio p {
+    color: #d9d9d9;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ========================= */
+/* MAPA */
+/* ========================= */
+
+.mapa-inicio {
+    width: 100%;
+
+    height: 450px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
+}
+
+.mapa-inicio iframe {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+}
+
+
+/* ========================= */
+/* TIPS SALUDABLES */
+/* ========================= */
+
+.tip-saludable {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 10000;
+}
+
+
+/* ========================= */
+/* BOTÓN FLOTANTE */
+/* ========================= */
+
+.boton-tip {
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #FF9800 0%, #E65100 100%);
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.boton-tip:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.65);
+}
+
+.boton-tip .badge-notif {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+
+    background: #D32F2F;
+    color: white;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #1c1c1c;
+    animation: pulsoBadge 2s infinite ease-in-out;
+}
+
+@keyframes pulsoBadge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+}
+
+
+/* ========================= */
+/* VENTANA RECOMENDACIÓN */
+/* ========================= */
+
+.ventana-tip {
+    position: absolute;
+    bottom: 75px;
+    left: 0;
+
+    width: 320px;
+    max-width: calc(100vw - 40px);
+
+    background: #181818;
+    border: 2px solid #FF8C00;
+    border-radius: 18px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(0.96);
+
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.ventana-tip.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+
+/* CABECERA */
+.cabecera-tip {
+    padding: 14px 16px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+}
+
+.cabecera-tip h2 {
+    margin: 0;
+    color: #FF8C00;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.dia-tip {
+    font-size: 11px;
+    color: #e0e0e0;
+    background: #282828;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-right: 18px;
+}
+
+.cerrar-tip {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+
+    border: none;
+    background: transparent;
+
+    color: #888888;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+
+    transition: color 0.2s;
+    z-index: 2;
+}
+
+.cerrar-tip:hover {
+    color: #FF8C00;
+}
+
+
+/* TARJETA DEL PLATO (CLICKEABLE) */
+.tarjeta-recomendacion {
+    padding: 12px 14px;
+    cursor: pointer;
+    border-radius: 12px;
+    margin: 10px 12px 6px;
+    background: #222222;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.22s ease;
+}
+
+.tarjeta-recomendacion:hover {
+    background: #2a2a2a;
+    border-color: rgba(255, 140, 0, 0.5);
+    box-shadow: 0 4px 16px rgba(255, 140, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.imagen-contenedor-tip {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 9px;
+    background: #111111;
+}
+
+.imagen-contenedor-tip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.tarjeta-recomendacion:hover .imagen-contenedor-tip img {
+    transform: scale(1.04);
+}
+
+.badge-categoria-tip {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+
+    background: rgba(0, 0, 0, 0.8);
+    color: #FFB300;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    padding: 3px 8px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 179, 0, 0.4);
+}
+
+.info-plato-tip {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.titulo-precio-tip {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.titulo-precio-tip h3 {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.precio-plato-tip {
+    color: #FF8C00;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.info-plato-tip p {
+    margin: 0;
+    color: #cccccc;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.accion-ver-menu {
+    margin-top: 6px;
+    color: #FFA726;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tarjeta-recomendacion:hover .accion-ver-menu {
+    color: #FFB74D;
+    text-decoration: underline;
+}
+
+
+/* BOTONES DE ACCIÓN */
+.acciones-tip {
+    display: flex;
+    gap: 8px;
+    padding: 4px 12px 12px;
+}
+
+.btn-agregar-tip,
+.btn-otro-tip {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-agregar-tip {
+    background: #FF8C00;
+    color: white;
+}
+
+.btn-agregar-tip:hover {
+    background: #ffa733;
+    transform: translateY(-1px);
+}
+
+.btn-otro-tip {
+    background: #2e2e2e;
+    color: #e0e0e0;
+}
+
+.btn-otro-tip:hover {
+    background: #3e3e3e;
+    color: white;
+}
+
+
+/* ========================= */
+/* BOTONES FLOTANTES */
+/* ========================= */
+
+.redes-flotantes {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    z-index: 9999;
+}
+
+.redes-flotantes a {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 30px;
+
+    color: white;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+
+    transition: .3s;
+}
+
+.redes-flotantes a:hover {
+    transform: scale(1.12);
+}
+
+
+/* INSTAGRAM */
+
+.instagram {
+    background: linear-gradient(
+        45deg,
+        #405DE6,
+        #5851DB,
+        #833AB4,
+        #C13584,
+        #E1306C,
+        #FD1D1D,
+        #FCAF45,
+        #FFDC80
+    );
+}
+
+
+/* WHATSAPP */
+
+.whatsapp {
+    background: #25D366;
+}
+
+
+/* FACEBOOK */
+
+.facebook {
+    background: #0b50b8;
+}
+
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 900px) {
+
+    .contenido-fundacion {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .texto-fundacion {
+        text-align: center;
+    }
+
+    .foto-fundacion {
+        order: 0;
+
+        padding-top: 0;
+    }
+
+    .foto-fundacion img {
+        height: 350px;
+    }
+
+}
+
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    header {
+        height: auto;
+
+        min-height: 80px;
+
+        padding: 10px 20px;
+
+        gap: 15px;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+
+    /* CARRITO */
+
+    .carrito {
+        top: 105px;
+        right: 15px;
+    }
+
+    .panel-carrito {
+        width: 320px;
+
+        max-width: calc(100vw - 30px);
+    }
+
+
+    /* FUNDACIÓN */
+
+    .fundacion {
+        padding: 40px 20px 60px;
+    }
+
+    .texto-fundacion h1 {
+        font-size: 34px;
+    }
+
+
+    /* LOGO + SLOGAN */
+
+    .logo-slogan {
+        gap: 7px;
+
+        margin-bottom: 20px;
+    }
+
+    .logo-slogan .logo-fundacion {
+        width: 90px;
+    }
+
+    .logo-slogan p {
+        font-size: 17px;
+
+        max-width: 250px;
+
+        line-height: 1.3;
+    }
+
+
+    /* TEXTO */
+
+    .texto-fundacion > p {
+        font-size: 16px;
+
+        text-align: left;
+    }
+
+
+    /* FOTO */
+
+    .foto-fundacion img {
+        height: 280px;
+    }
+
+
+    /* UBICACIÓN */
+
+    .ubicacion-inicio {
+        margin-top: 50px;
+    }
+
+    .mapa-inicio {
+        height: 350px;
+    }
+
+
+    /* TIP */
+
+    .tip-saludable {
+        bottom: 20px;
+
+        left: 20px;
+    }
+
+    .boton-tip {
+        width: 50px;
+        height: 50px;
+    }
+
+    .ventana-tip {
+        width: 270px;
+    }
+
+
+    /* REDES */
+
+    .redes-flotantes {
+        right: 15px;
+        bottom: 20px;
+
+        gap: 10px;
+    }
+
+    .redes-flotantes a {
+        width: 50px;
+        height: 50px;
+
+        font-size: 24px;
+    }
+
+}
+
+/* =========================================
+        PANTALLA DE CARGA
+========================================= */
+
+#pantallaCarga {
+    position: fixed;
+    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    min-height: 100%;
+
+    background: radial-gradient(circle at center, #1c1c1c 0%, #101010 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999999;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+        OCULTAR
+========================= */
+
+#pantallaCarga.ocultar {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =========================
+        CONTENIDO
+========================= */
+
+.carga-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+    text-align: center;
+    user-select: none;
+}
+
+
+/* =========================
+   CONTENEDOR DEL SÍMBOLO
+   (Consistente en todo dispositivo)
+========================= */
+
+.simbolo-carga-contenedor {
+    width: 130px;
+    height: 130px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    margin: 0 auto;
+}
+
+.logo-carga,
+.simbolo-svg {
+    width: 100%;
+    height: 100%;
+    max-width: 130px;
+    max-height: 130px;
+
+    object-fit: contain;
+    display: block;
+
+    filter: drop-shadow(0 4px 14px rgba(255, 140, 0, 0.4));
+    animation: aparecerSimbolo 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================
+        CARGADOR
+========================= */
+
+.spinner-carga {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: 3.5px solid rgba(255, 140, 0, 0.15);
+    border-top-color: #FF8C00;
+    border-right-color: #FF8C00;
+
+    animation: girarCarga 0.8s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.25);
+}
+
+
+/* =========================
+        TEXTO
+========================= */
+
+.carga-contenido p {
+    margin: 0;
+
+    color: #FF8C00;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================
+        ANIMACIONES
+========================= */
+
+@keyframes girarCarga {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes aparecerSimbolo {
+
+    from {
+        opacity: 0;
+        transform: scale(0.78);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   PRODUCTO DESTACADO (DESDE RECOMENDACIÓN)
+========================= */
+
+.producto.producto-destacado {
+    outline: 3px solid #FF8C00 !important;
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.85) !important;
+    transform: scale(1.05) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: pulsoDestacado 1.2s infinite alternate ease-in-out;
+    z-index: 10;
+}
+
+@keyframes pulsoDestacado {
+    from {
+        box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+    }
+    to {
+        box-shadow: 0 0 35px rgba(255, 140, 0, 0.95);
+    }
+}
+
+
+/* ========================= */
+/* FOOTER                    */
+/* ========================= */
+
+.pie-pagina {
+    width: 100%;
+    background: #141414;
+    border-top: 2px solid #FF8C00;
+    margin-top: 60px;
+    position: relative;
+    z-index: 10;
+}
+
+.contenedor-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px 30px;
+    display: grid;
+    grid-template-columns: 1.3fr 1.2fr 1fr;
+    gap: 40px;
+}
+
+.columna-footer h3 {
+    color: #FF8C00;
+    font-size: 19px;
+    margin-bottom: 18px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.columna-footer h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background: #FF8C00;
+}
+
+.logo-footer img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 14px;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.slogan-footer {
+    color: #b0b0b0;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 320px;
+}
+
+.lista-contacto {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.lista-contacto li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #dcdcdc;
+    font-size: 15px;
+}
+
+.lista-contacto li i {
+    color: #FF8C00;
+    font-size: 16px;
+    width: 18px;
+    text-align: center;
+}
+
+.lista-contacto a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.lista-contacto a:hover {
+    color: #FF8C00;
+    text-decoration: underline;
+}
+
+.horarios-redes p {
+    color: #b0b0b0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.horarios-redes p i {
+    color: #FF8C00;
+}
+
+.redes-footer {
+    display: flex;
+    gap: 12px;
+}
+
+.redes-footer a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #222222;
+    border: 1px solid rgba(255, 140, 0, 0.3);
+    color: #FF8C00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.redes-footer a:hover {
+    background: #FF8C00;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 14px rgba(255, 140, 0, 0.4);
+}
+
+.copyright-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 18px 20px;
+    text-align: center;
+}
+
+.copyright-footer p {
+    color: #888888;
+    font-size: 13px;
+    margin: 0;
+}
+
+@media (max-width: 850px) {
+    .contenedor-footer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 20px 25px;
+    }
+}

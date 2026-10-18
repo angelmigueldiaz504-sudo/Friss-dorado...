@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <link rel="icon"
+        type="image/png"
+        href="Imagenes/Pollo-Friss-Simbolo.png">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Almuerzos - Friss Dorado</title>
+
+    <link rel="stylesheet"
+        href="MenuAlmuerzos.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body data-seccion="almuerzos">
+
+
+<!-- ========================= -->
+<!-- CARRITO -->
+<!-- ========================= -->
+
+<div class="carrito">
+
+    <button id="botonCarrito"
+        class="boton-carrito">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <span id="cantidadCarrito">0</span>
+
+    </button>
+
+
+    <div id="panelCarrito"
+        class="panel-carrito">
+
+        <div class="cabecera-carrito">
+
+            <h2>
+                <i class="fa-solid fa-cart-shopping"></i>
+                Mi carrito
+            </h2>
+
+            <button id="cerrarCarrito"
+                class="cerrar-carrito">
+
+                &times;
+
+            </button>
+
+        </div>
+
+
+        <div id="listaCarrito"
+            class="lista-carrito">
+
+            <p class="carrito-vacio">
+                Tu carrito está vacío.
+            </p>
+
+        </div>
+
+
+        <div class="total-carrito">
+
+            <span>Total:</span>
+
+            <strong id="totalCarrito">
+                $0 COP
+            </strong>
+
+        </div>
+
+
+        <button id="completarPedido"
+            class="completar-pedido">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Completar pedido
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header>
+
+    <div class="logo">
+
+        <img
+            src="Imagenes/Friss-Dorado-Logo.png"
+            alt="Friss Dorado Logo">
+
+    </div>
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="Catalogo.html">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Catálogo
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ========================= -->
+<!-- MENÚ -->
+<!-- ========================= -->
+
+<section class="menu">
+
+    <h1>Almuerzos</h1>
+
+    <p class="descripcion">
+        Disfruta nuestros productos y agrega tus favoritos al carrito.
+    </p>
+
+
+    <!-- PRODUCTOS -->
+    <div id="productos"
+        class="productos">
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CATEGORÍAS -->
+<!-- ========================= -->
+
+<div class="categorias">
+
+    <a href="Catalogo.html" class="boton-categoria">
+        <i class="fa-solid fa-utensils"></i>
+        Comidas rápidas
+    </a>
+
+    <a href="MenuBebidas.html" class="boton-categoria">
+        <i class="fa-solid fa-glass-water"></i>
+        Bebidas
+    </a>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- PIE DE PÁGINA (FOOTER) -->
+<!-- ========================= -->
+
+<footer class="pie-pagina">
+    <div class="contenedor-footer">
+        <div class="columna-footer info-restaurante">
+            <div class="logo-footer">
+                <img src="Imagenes/Friss-Dorado-Logo.png" alt="Friss Dorado Logo">
+            </div>
+            <p class="slogan-footer">Sabor que enciende momentos. El mejor pollo broaster y cortes a la parrilla.</p>
+        </div>
+
+        <div class="columna-footer contacto-footer">
+            <h3>Contáctanos</h3>
+            <ul class="lista-contacto">
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+573102606290">+57 310 260 6290</a>
+                </li>
+                <li>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <a href="https://wa.me/573102606290" target="_blank">+57 310 260 6290 (WhatsApp)</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:frissdorado@gmail.com">frissdorado@gmail.com</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="columna-footer horarios-redes">
+            <h3>Horarios y Redes</h3>
+            <p><i class="fa-regular fa-clock"></i> Lunes a Domingo: 11:00 AM - 10:00 PM</p>
+            <div class="redes-footer">
+                <a href="https://www.instagram.com/frissdorado_polloyparrilla?igsh=MXdvMWtjMmg2azF3bg==" target="_blank" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/573102606290" target="_blank" title="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1BXFE8TA8d/" target="_blank" title="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright-footer">
+        <p>© 2024 Friss Dorado - Pollo y Parrilla. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+
+<!-- ========================= -->
+<!-- REDES -->
+<!-- ========================= -->
+
+<div class="redes-flotantes">
+
+    <a
+        href="https://www.instagram.com/frissdorado_polloyparrilla?igsh=MXdvMWtjMmg2azF3bg=="
+        target="_blank"
+        class="instagram">
+
+        <i class="fa-brands fa-instagram"></i>
+
+    </a>
+
+
+    <a
+        href="https://wa.me/573102606290"
+        target="_blank"
+        class="whatsapp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+
+    <a
+        href="https://www.facebook.com/share/1BXFE8TA8d/"
+        target="_blank"
+        class="facebook">
+
+        <i class="fa-brands fa-facebook"></i>
+
+    </a>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================= -->
+
+<script src="MenuAlmuerzos.js"></script>
+<script src="Carga.js"></script>
+<script src="Carrito.js"></script>
+
+
+</body>
+
+</html>
